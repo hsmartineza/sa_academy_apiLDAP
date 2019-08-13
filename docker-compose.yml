@@ -1,0 +1,16 @@
+version: '2.1'
+services:
+  academy-api:
+    container_name: academy-api
+    build: .
+    environment:
+      PORT: '5000'
+      SHOW_URLS: 'true'
+      COURSES_URL: '192.168.99.101'
+      COURSES_PORT: '3000'
+      COURSES_ENTRY: 'courses-ms/resources/courses'
+      LOGIN_URL: '192.168.99.101'
+      LOGIN_PORT: '3001'
+      LOGIN_ENTRY: 'students-ms/resources/auth/'
+    ports:
+      - '5000:5000'
